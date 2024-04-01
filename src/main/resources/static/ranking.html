@@ -15,19 +15,19 @@
 <body>
 <div class="site-container">
     <header id="nav-1" role="banner" class="header">
-        <a href="http://192.168.154.131/" style="text-decoration: none;">
+        <a href="http://47.120.37.220:6868/" style="text-decoration: none;">
             <h1>AI榜单</h1>
         </a>
         <nav>
             <!--<a href="http://192.168.244.129/" class="nav-link">首页</a>-->
-            <a href="http://192.168.154.131/" class="nav-link">首页</a>
+            <a href="http://47.120.37.220:6868/" class="nav-link">首页</a>
             <a id="download-image-link" class="nav-link" >下载图片</a>
         </nav>
     </header>
 
     <!-- 访问次数上限提示，样式与无数据提示保持一致 -->
     <div th:if="${accessLimitReached != null and accessLimitReached}" class="access-limit-reached-alert no-data-alert">
-        <p>您的IP地址（<span th:text="${ipAddress}"></span>）今日请求次数已达到5次上限，明天再使用。</p>
+        <p>您的IP地址（<span th:text="${ipAddress}"></span>）今日请求次数已达到5次上限，请明天再使用，感谢~</p>
     </div>
 
 
@@ -55,8 +55,8 @@
     </div>
 
     <footer class="footer">
-        <p><a href="https://docs.qq.com/doc/DZVpIQUpVd1Rvdm5n" target="_blank">这网站怎么做的</a> | <a href="https://www.ai-code.online" target="_blank">AI好物</a></p>
-        <span style="color: #A0AEC0; font-size: 14px;">@#############</span>
+        <p><a href="https://gitee.com/wzylzjtn/ai-ranking" target="_blank">网站开发教程</a><!-- | <a href="https://www.ai-code.online" target="_blank">AI好物</a></p>-->
+        <span style="color: #A0AEC0; font-size: 14px;">@大数据技能圈</span>
     </footer>
 </div>
 <script src="js/html2canvas.min.js"></script>

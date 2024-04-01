@@ -2,7 +2,13 @@
 
 ### 产品地址：
 
-[192.168.154.131](http://192.168.154.131/ranking "AI榜单")
+[47.120.37.220:6868](http://47.120.37.220:6868/ "AI榜单")
+
+**注意：** 由于token有限，每天试用的次数上限是5，请见谅。
+
+### 使用教程：
+
+在首页右上角
 
 ### 产品效果：
 
@@ -13,7 +19,7 @@
 
 ![结果展示](images/结果.png)
 
-### 准备工作
+### 开发准备工作
 
 [1 获取大模型API-KEY](https://help.aliyun.com/zh/dashscope/developer-reference/activate-dashscope-and-create-an-api-key?spm=a2c4g.11186623.0.0.6d1b12b0REV142 "结果展示")
 
@@ -58,3 +64,8 @@ Idea：选择入口主程序 -> Edit Configrations
 [11 打包](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/11%20%E6%89%93%E5%8C%85.md)
 
 [12 部署](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/12%20%E9%83%A8%E7%BD%B2.md)
+
+
+### 加群交流
+
+![AI榜单1群](images/1群.png "1群")
