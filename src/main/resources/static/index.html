@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <title>AI榜单</title>
+    <meta name="keywords" content="AI榜单，AI，ChatGPT，时间线，rankings，免费在线工具，榜单工具，榜单在线生成工具，榜单图， 榜单图软件, 榜单图工具"/>
+    <meta name="description" content="AI榜单是一个基于AI将某个事件以榜单的方式产出的AI网站"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="site-container">
+    <header>
+        <a href="http://192.168.154.131/" style="text-decoration: none;">
+            <h1>AI榜单</h1>
+        </a>
+        <a href="http://a6t.cn/GIsrQ" target="_blank">使用教程</a>
+    </header>
+    <!-- 新增的标签行 -->
+    <div class="tag-line">
+        <div class="tag-item" data-id="1" onclick="selectTag(this)">高校</div>
+        <div class="tag-item" data-id="2" onclick="selectTag(this)">企业</div>
+        <div class="tag-item" data-id="3" onclick="selectTag(this)">科研</div>
+
+        <div class="tag-item custom-tag" id="customTagButton">自定义</div>
+        <div id="customInputWrapper" style="display:none;">
+            <input type="text" id="customTagName" placeholder="请输入自定义类型">
+        </div>
+
+        <!-- 根据需要添加更多标签 -->
+        <div class="tag-dropdown">
+            <select id="displayCountSelect" onchange="setDisplayCount(this)">
+                <option value="10">条数</option>
+                <option value="10">10条</option>
+                <option value="20">20条</option>
+                <option value="30">30条</option>
+                <option value="40">40条</option>
+                <option value="50">50条</option>
+            </select>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="input-group">
+                <label for="myInput"></label><input type="text" id="myInput" placeholder=" 请输入关键词" style="text-align: center;">
+                <button id="bt" type="button" onclick="sendMessage()">生成</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><a href="https://docs.qq.com/doc/DZVpIQUpVd1Rvdm5n" target="_blank">这网站怎么做的</a> | <a href="https://www.ai-code.online" target="_blank">AI好物</a></p>
+        <span>@########</span>
+    </footer>
+</div>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI榜单</title>
+    <meta name="keywords" content="AI榜单，AI，ChatGPT，rankings，免费在线工具，榜单工具，榜单在线生成工具，榜单图， 榜单图软件, 榜单图工具"/>
+    <meta name="description" content="AI榜单是一个基于AI将某个事件以榜单的方式产出的AI网站"/>
+    <link rel="stylesheet" href="css/ranking.css">
+    <script src="js/html2canvas.min.js"></script>
+</head>
+
+<body>
+<div class="site-container">
+    <header id="nav-1" role="banner" class="header">
+        <a href="http://192.168.154.131/" style="text-decoration: none;">
+            <h1>AI榜单</h1>
+        </a>
+        <nav>
+            <!--<a href="http://192.168.244.129/" class="nav-link">首页</a>-->
+            <a href="http://192.168.154.131/" class="nav-link">首页</a>
+            <a id="download-image-link" class="nav-link" >下载图片</a>
+        </nav>
+    </header>
+
+    <!-- 访问次数上限提示，样式与无数据提示保持一致 -->
+    <div th:if="${accessLimitReached != null and accessLimitReached}" class="access-limit-reached-alert no-data-alert">
+        <p>您的IP地址（<span th:text="${ipAddress}"></span>）今日请求次数已达到5次上限，明天再使用。</p>
+    </div>
+
+
+    <!-- 当 accessLimitReached 不存在或者为 false 时，进一步判断 rankings 是否为空 -->
+    <div th:if="${accessLimitReached == null or !accessLimitReached}">
+        <div th:if="${rankings != null and #lists.isEmpty(rankings)}" class="no-data-alert">
+            <p>抱歉，暂无数据可供显示，请调整正确的搜索条件。</p>
+        </div>
+
+        <!-- 表格部分，根据 rankings 是否为空决定是否显示 -->
+        <table id="ranking-table" th:if="${rankings != null and !#lists.isEmpty(rankings)}">
+            <thead>
+            <tr>
+                <th style="text-align: center;">排名</th>
+                <th style="text-align: center;">名称</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row : ${rankings}">
+                <td style="text-align: center;" th:text="${row.order}"></td>
+                <td style="text-align: center;" th:text="${row.desc}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        <p><a href="https://docs.qq.com/doc/DZVpIQUpVd1Rvdm5n" target="_blank">这网站怎么做的</a> | <a href="https://www.ai-code.online" target="_blank">AI好物</a></p>
+        <span style="color: #A0AEC0; font-size: 14px;">@#############</span>
+    </footer>
+</div>
+<script src="js/html2canvas.min.js"></script>
+<script src="js/ranking.js"></script>
+</body>
+</html>
