@@ -7,11 +7,11 @@
 ### 产品效果：
 
 首页：
-![首页](images/首页.png "首页")
+![首页](https://github.com/Mrkuhuo/ai-ranking/blob/main/images/%E9%A6%96%E9%A1%B5.png)
 
 结果：
 
-![结果展示](images/结果.png "结果展示")
+![结果展示](https://github.com/Mrkuhuo/ai-ranking/blob/main/images/%E7%BB%93%E6%9E%9C.png)
 
 ### 准备工作
 
