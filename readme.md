@@ -35,26 +35,26 @@ Idea：选择入口主程序 -> Edit Configrations
 
 ### 开发步骤
 
-[1. pom文件配置](docs/1 pom文件配置.md "pom文件配置")
+[1. pom文件配置](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/1%20pom%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE.md)
 
-[2 application.properties](docs/2 application.properties配置.md "application.properties配置")
+[2 application.properties](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/2%20application.properties%E9%85%8D%E7%BD%AE.md)
 
-[3 前端页面编写.md](docs/3 前端页面编写.md "前端页面编写")
+[3 前端页面编写.md](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/3%20%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2%E7%BC%96%E5%86%99.md)
 
-[4 前端CSS样式编写](docs/4 前端CSS样式编写.md "前端CSS样式编写")
+[4 前端CSS样式编写](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/4%20%E5%89%8D%E7%AB%AFCSS%E6%A0%B7%E5%BC%8F%E7%BC%96%E5%86%99.md)
 
-[5 前端js文件编写](docs/5 前端js文件编写.md "前端js文件编写")
+[5 前端js文件编写](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/5%20%E5%89%8D%E7%AB%AFjs%E6%96%87%E4%BB%B6%E7%BC%96%E5%86%99.md)
 
-[6 网页logo文件设置](docs/6 网页logo文件设置 "网页logo文件设置")
+[6 网页logo文件设置](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/6%20%E7%BD%91%E9%A1%B5logo%E6%96%87%E4%BB%B6%E8%AE%BE%E7%BD%AE.md)
 
-[7 主入口代码编写](docs/7 主入口代码编写 "主入口代码编写")
+[7 主入口代码编写](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/7%20%E4%B8%BB%E5%85%A5%E5%8F%A3%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99.md)
 
-[8 config代码编写](docs/8 config代码编写.md "config代码编写")
+[8 config代码编写](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/8%20config%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99.md)
 
-[9 util代码编写](docs/9 util代码编写.md "util代码编写")
+[9 util代码编写](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/9%20util%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99.md)
 
-[10 controller代码编写](docs/10 controller代码编写.md "controller代码编写")
+[10 controller代码编写](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/10%20controller%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99.md)
 
-[11 打包](docs/11 打包.md "打包")
+[11 打包](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/11%20%E6%89%93%E5%8C%85.md)
 
-[12 部署](docs/12 部署.md "部署")
+[12 部署](https://github.com/Mrkuhuo/ai-ranking/blob/main/docs/12%20%E9%83%A8%E7%BD%B2.md)
