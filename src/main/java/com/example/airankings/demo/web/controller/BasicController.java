@@ -18,7 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.UnknownHostException;
+import java.time.LocalDate;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -30,7 +32,30 @@ public class BasicController {
     String tag = "";
     int displayCount = 10;
 
-    private final ConcurrentHashMap<String, Integer> ipAddressAccessCounter = new ConcurrentHashMap<>();
+    private final Map<String, LocalDateAndCount> ipAddressAccessCounter = new ConcurrentHashMap<>();
+
+    private static class LocalDateAndCount {
+        private final LocalDate date;
+        private int count;
+
+        LocalDateAndCount(LocalDate date) {
+            this.date = date;
+            this.count = 1;
+        }
+
+        void increment() {
+            count++;
+        }
+
+        int getCount() {
+            return count;
+        }
+
+        LocalDate getDate() {
+            return date;
+        }
+    }
+
 
     /*
     * 此Java函数处理HTTP请求，其功能主要包括：通过IpUtil.getIpAddr(request)获取请求的客户端IP地址并打印；然后返回字符串"index"，
@@ -79,7 +104,7 @@ public class BasicController {
         String ipAddress = IpUtil.getIpAddr(httpServletRequest);
         map.addAttribute("accessLimitReached", false); // 初始化为 false 或者根据实际情况赋值
 
-        if (!limitIpAddressAccess(ipAddress)) {
+        if (!limitIpAddressAccess(httpServletRequest, ipAddress)) {
             map.addAttribute("accessLimitReached", true);
             map.addAttribute("ipAddress", ipAddress);
         } else {
@@ -121,17 +146,27 @@ public class BasicController {
     * 若IP地址访问次数已达或超过5次，则阻止访问并返回false；否则，增加访问次数并允许访问，返回true。
     * 如果输入的IP地址为空，则默认返回true。
     * */
-    private boolean limitIpAddressAccess(String ipAddress) throws UnknownHostException {
+    private boolean limitIpAddressAccess(HttpServletRequest httpServletRequest, String ipAddress) throws UnknownHostException {
         if (ipAddress != null) {
-            Integer currentCount = ipAddressAccessCounter.getOrDefault(ipAddress, 0);
-            if (currentCount >= 5) {
-                System.out.println("The ipAddress " + ipAddress + " has accessed " + currentCount + " times and has been blocked.");
+            LocalDate today = LocalDate.now();
+            LocalDateAndCount currentEntry = ipAddressAccessCounter.get(ipAddress);
+
+            if (currentEntry == null || !today.equals(currentEntry.getDate())) {
+                // 新的一天，重置访问计数
+                currentEntry = new LocalDateAndCount(today);
+                ipAddressAccessCounter.put(ipAddress, currentEntry);
+            }
+
+            if (currentEntry.getCount() >= 5) {
+                System.out.println("The ipAddress " + ipAddress + " has accessed " + currentEntry.getCount() + " times on " + currentEntry.getDate() + " and has been blocked.");
                 return false;
             } else {
-                ipAddressAccessCounter.put(ipAddress, currentCount + 1);
+                currentEntry.increment();
                 return true;
             }
         }
+
         return true; // 如果ipAddress为空，一般不应该发生，此处返回true仅作兜底处理
     }
+
 }
